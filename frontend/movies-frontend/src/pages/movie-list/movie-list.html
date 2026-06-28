@@ -1,0 +1,69 @@
+<section class="card">
+  <h3>List movies</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+
+        <th>
+          Year
+          <input
+            type="number"
+            placeholder="Filter by year"
+            [(ngModel)]="yearFilter"
+            (keyup.enter)="applyFilters()"
+          />
+        </th>
+
+        <th>Title</th>
+
+        <th>
+          Winner?
+          <select [(ngModel)]="winnerFilter" (change)="applyFilters()">
+            <option value="">Yes/No</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <td>{{ movie.id }}</td>
+        <td>{{ movie.year }}</td>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.winner ? 'Yes' : 'No' }}</td>
+      </tr>
+
+      <tr *ngIf="movies.length === 0">
+        <td colspan="4">No records found</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <button type="button" (click)="applyFilters()">Apply filters</button>
+    <button type="button" (click)="clearFilters()">Clear</button>
+  </div>
+
+  <div class="pagination">
+    <button type="button" (click)="previousPage()" [disabled]="page === 0">
+      «
+    </button>
+
+    <button
+      type="button"
+      *ngFor="let pageNumber of pages"
+      [class.active]="pageNumber === page"
+      (click)="goToPage(pageNumber)"
+    >
+      {{ pageNumber + 1 }}
+    </button>
+
+    <button type="button" (click)="nextPage()" [disabled]="page >= totalPages - 1">
+      »
+    </button>
+  </div>
+</section>

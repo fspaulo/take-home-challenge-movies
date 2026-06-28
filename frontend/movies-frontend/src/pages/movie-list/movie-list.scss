@@ -1,0 +1,72 @@
+.card {
+  border: 1px solid #ddd;
+  padding: 12px;
+  background: white;
+}
+
+h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 6px;
+  text-align: left;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 4px;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 12px;
+}
+
+.actions {
+  margin-top: 12px;
+}
+
+.actions button {
+  margin-right: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  padding: 5px 9px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
