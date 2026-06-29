@@ -55,7 +55,7 @@ git clone <url-do-repositorio>
 Acesse a pasta do projeto:
 
 ```bash
-cd <nome-do-projeto>
+cd frontend/movies-frontend/
 ```
 
 Instale as dependências:
@@ -151,7 +151,13 @@ git clone <url-do-repositorio>
 Acesse a pasta do projeto:
 
 ```bash
-cd <nome-do-projeto>
+cd backend/movies-backend/
+```
+
+Instale as dependências:
+
+```bash
+mvn install
 ```
 
 ## Como executar
